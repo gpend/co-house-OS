@@ -7,7 +7,7 @@ import './header.scss'
 export default function Header (){
     return (
         <header>
-            <Navbar expand="lg" className="bg-body-tertiary">
+            <Navbar expand="lg" className="bg-body-tertiary" fixed='top'>
                 <Container>
                     <Navbar.Brand href="#home">CoHouse-OS</Navbar.Brand><Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
