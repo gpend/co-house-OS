@@ -1,6 +1,6 @@
 import { useState } from 'react'
+import './App.scss';
 import Header from './components/Header/Header'
-import './App.scss'
 import { Container } from 'react-bootstrap'
 
 function App() {
