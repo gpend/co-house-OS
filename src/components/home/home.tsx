@@ -1,6 +1,12 @@
+import { Container } from "react-bootstrap";
+
 function Home() {
     return (
-        <h1>Welcome Home</h1>
+        <Container className="text-center">
+            <h1>Welcome Home</h1>
+            <br/>
+            <p>test</p>
+        </Container>
     )
 }
 
