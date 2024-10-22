@@ -2,8 +2,7 @@ services:
  vite_docker:
    image: node:alpine
    container_name: vite_docker
-   entrypoint: /bin/sh
-   #command: npm i && npm run dev
+   #entrypoint: /bin/sh
    ports:
      - 8000:8000
    working_dir: /srv/app
@@ -12,3 +11,4 @@ services:
        source: ./
        target: /srv/app
    tty: true
+   command: "sh -c 'cd /srv/app && npm i && npm run dev'"
