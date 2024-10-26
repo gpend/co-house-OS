@@ -5,18 +5,22 @@ class User {
 	firstName : string;
 	lastName : string;
     birthday : Date;
+    relatives : User[] = []
 	appointments: CalendarItem[] = [];
-	hobbies : Hobby[] = [];
-    Account : Account
+	hobbies : string[] = [];
+    account : Account
     maintenanceRequests: MaintenanceRequest[];
   
-    constructor(gender: string, firstName: string, lastName: string, birthday : Date, appointments: CalendarItem[], maintenanceRequests: maintenanceRequest[]) {
+    constructor(gender: string, firstName: string, lastName: string, birthday : Date, relatives: User[], appointments: CalendarItem[], hobbies:string[], account: Account, maintenanceRequests: MaintenanceRequest[]) {
       this.gender = gender;
       this.firstName = firstName;
       this.lastName = lastName;
-      this.appointments = appointments;
-      this.maintenanceRequests = maintenanceRequests;
       this.birthday = birthday;
+      this.relatives = relatives
+      this.appointments = appointments;
+      this.hobbies = hobbies
+      this.account = account;
+      this.maintenanceRequests = maintenanceRequests;
     }
   
     greet(): void {
@@ -24,6 +28,15 @@ class User {
     }
 }
 
+class Child extends User{
+    parent : User;
+
+    constructor (gender: string, firstName: string, lastName: string, birthday: Date, relatives: User[], appointments: CalendarItem[], hobbies:string[], account: Account, maintenanceRequests: MaintenanceRequest[], parent: User){
+        super(gender, firstName, lastName, birthday, relatives, appointments, hobbies, account, maintenanceRequests)
+        this.parent = parent
+    }
+
+}
 
 class CalendarItem {
     appointmentTitle: string;
@@ -63,12 +76,11 @@ class Address {
     }
 }
 
-
-class Child extends User{
-    parent : User;
-
-    constructor (parent: User, gender: string, firstName: string, lastName: string, birthday : Date, appointments: CalendarItem[], maintenanceRequests: maintenanceRequest[]){
-        super(gender, firstName, lastName, birthday, appointments, maintenanceRequest[])
-        this.parent = parent
-    }
+class MaintenanceRequest {
+  
 }
+
+class Account {
+
+}
+
