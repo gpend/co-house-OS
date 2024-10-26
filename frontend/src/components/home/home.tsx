@@ -8,6 +8,7 @@ function Home() {
             <br/>
             <Container id="news">
                 <h2>News</h2>
+                
                 <Container id="newsContainer">{getNews(5)}</Container>
             </Container>
             <Container id="messages">
@@ -18,3 +19,4 @@ function Home() {
 }
 
 export default Home;
+// if news = null; text = No News

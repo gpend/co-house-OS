@@ -1,0 +1,19 @@
+{
+  "name": "cohouse_backend",
+  "version": "1.0.0",
+  "description": "cd-house os backend",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Greg Pendleton",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.1",
+    "typescript": "^5.6.3"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.8.1"
+  }
+}
