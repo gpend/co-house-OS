@@ -1,0 +1,10 @@
+FROM alpine as dev
+
+COPY package*.json .
+
+RUN npn install
+
+COPY . .
+
+
+
