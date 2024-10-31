@@ -9,9 +9,9 @@ function Home() {
             <div>
                 <br />
                 <h2>News</h2>
-                {/*get news from api
-                <Container id="newsContainer">{getNews(5)}</Container>
-                */}
+                <Container id="newsContainer"></Container>
+                <h2>Messages</h2>
+                <Container id="messageContainer"></Container>
             </div>
         </Container>
 )
