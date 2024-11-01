@@ -5,8 +5,6 @@ function Home() {
         <Container>
             <div className="text-center" id="home">
                 <h1>Welcome Home</h1>
-            </div>
-            <div>
                 <br />
                 <h2>News</h2>
                 <Container id="newsContainer"></Container>
@@ -14,7 +12,6 @@ function Home() {
                 <Container id="messageContainer"></Container>
             </div>
         </Container>
-)
-}
+)}
 
 export default Home;
