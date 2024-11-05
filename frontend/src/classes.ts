@@ -1,26 +1,17 @@
 // post
 //  user
 class User {
-    gender : string;
-	firstName : string;
-	lastName : string;
-    birthday : Date;
-    relatives : User[] = []
-	appointments: CalendarItem[] = [];
-	hobbies : string[] = [];
-    account : Account
-    maintenanceRequests: MaintenanceRequest[];
   
-    constructor(gender: string, firstName: string, lastName: string, birthday : Date, relatives: User[], appointments: CalendarItem[], hobbies:string[], account: Account, maintenanceRequests: MaintenanceRequest[]) {
-      this.gender = gender;
-      this.firstName = firstName;
-      this.lastName = lastName;
-      this.birthday = birthday;
-      this.relatives = relatives
-      this.appointments = appointments;
-      this.hobbies = hobbies
-      this.account = account;
-      this.maintenanceRequests = maintenanceRequests;
+    constructor(public gender: string, 
+        public firstName: string, 
+        public lastName: string, 
+        public birthday : Date, 
+        public relatives: User[], 
+        public appointments: CalendarItem[], 
+        public hobbies:string[], 
+        public account: Account, 
+        public maintenanceRequests: MaintenanceRequest[]) {
+
     }
   
     greet(): void {
@@ -29,28 +20,40 @@ class User {
 }
 
 class Child extends User{
-    parent : User;
 
-    constructor (gender: string, firstName: string, lastName: string, birthday: Date, relatives: User[], appointments: CalendarItem[], hobbies:string[], account: Account, maintenanceRequests: MaintenanceRequest[], parent: User){
-        super(gender, firstName, lastName, birthday, relatives, appointments, hobbies, account, maintenanceRequests)
-        this.parent = parent
+    constructor (public gender: string,
+         public firstName: string,
+         public lastName: string,
+         public birthday: Date,
+         public relatives: User[],
+         public appointments: CalendarItem[], 
+         public hobbies:string[], 
+         public account: Account, 
+         public maintenanceRequests: MaintenanceRequest[], 
+         public parent: User){
+        super(  gender,
+                firstName,
+                lastName,
+                birthday,
+                relatives,
+                appointments,
+                hobbies,
+                account,
+                maintenanceRequests,
+        );
     }
 
 }
 
 class CalendarItem {
-    appointmentTitle: string;
-    appointmentDate : string;
-    appointmentTime : string;
-    appointmentLocation : Address;
-    guests: User [];
 
-    constructor(appointmentTitle: string, appointmentDate: string, appointmentTime: string, appointmentLocation: Address, guests : User []) {
-        this.appointmentTitle = appointmentTitle;
-        this.appointmentDate = appointmentDate;
-        this.appointmentTime = appointmentTime;
-        this.appointmentLocation = appointmentLocation
-        this.guests = guests
+    constructor
+    (    public appointmentTitle: string,
+         public appointmentDate: string,
+         public appointmentTime: string,
+         public appointmentLocation:Address, 
+         public guests :User []
+    ) {
     }
     
     //AddGuests(User);
