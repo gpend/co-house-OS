@@ -7,7 +7,7 @@ const NewsComponent: React.FC = () => {
   const [news, setNews] = useState<NewsItem[] | null>(null);
 
   useEffect(() => {
-    async () => {
+    const fetchNewsData = async () => {
       try {
         const newsData = await fetchNews(5, "adult");
         setNews(newsData);
@@ -16,30 +16,28 @@ const NewsComponent: React.FC = () => {
       }
     };
 
-     
+    fetchNewsData(); // Call the function here
+  }, []);
 
-    if (!news) {
-      return <p>Loading news...</p>;
-    }
-  
+  return (
+    <div>
+      {news ? (
+        news.map((newsElement) => (
+          <div key={newsElement.id}>
+            <h1>{newsElement.title}</h1>
+            <p>{newsElement.description}</p>
+            <a href={newsElement.url} target="_blank" rel="noopener noreferrer">
+              Read more
+            </a>
+          </div>
+        ))
+      ) : (
+        <p>Loading news...</p>
+      )}
+    </div>
+  );
+};
 
-    return (
-      <div>
-      {news.forEach(newsElement => {
-        return(
-        <div>
-          <h1>{newsElement.title}</h1>
-          <p>{newsElement.description}</p>
-          <a href={newsElement.url} target="_blank" rel="noopener noreferrer">
-            Read more
-          </a>
-        </div> )
-      })}
-      </div>
-    );
-  }),[];
-  
-}
 
 function Home() {
     return (

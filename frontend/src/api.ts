@@ -12,9 +12,10 @@ async function fetchNews(itemCount: number, userRole: string): Promise<NewsItem[
 
     const data: NewsItem[] = await response.json() as NewsItem[];
     return data;
+
   } catch (error) {
     console.error("Error fetching news:", error);
-    return null;
+    return null; //TODO return error to display?
   }
 }
 
